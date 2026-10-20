@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Submitted | CloudAttend</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>.login-page{grid-template-columns:1fr}</style>
+</head>
+<body style="background:var(--bg-base);">
+<div class="login-page">
+  <main class="login-panel">
+    <div class="login-box fade-in">
+      <h1 class="login-title">Request submitted</h1>
+      <p class="login-sub">Admin access for <strong>{{ username }}</strong> is pending approval. You can sign in after an existing administrator approves the request.</p>
+      <p style="text-align:center"><a href="{% url 'admin_login' %}">Return to admin sign in</a></p>
+    </div>
+  </main>
+</div>
+</body>
+</html>

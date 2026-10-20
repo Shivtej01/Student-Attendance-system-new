@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In | CloudAttend</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <style>
+    .login-page{grid-template-columns:1fr}
+    .login-panel{min-height:100vh}
+    .choice-link{display:block;padding:.8rem 1rem;margin:1rem 0;border-radius:10px;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;text-decoration:none;font-weight:600}
+  </style>
+</head>
+<body style="background:var(--bg-base);">
+<div class="login-page">
+  <main class="login-panel">
+    <div class="login-box fade-in" style="text-align:center">
+      <div class="login-logo"><i class="fas fa-cloud"></i></div>
+      <h1 class="login-title">Sign in to CloudAttend</h1>
+      <p class="login-sub">Choose the account type you want to use.</p>
+      <p><a class="choice-link" href="{% url 'student_login' %}">Student sign in</a></p>
+      <p><a class="choice-link" href="{% url 'admin_login' %}">Admin sign in</a></p>
+      <p>New student? <a href="{% url 'student_signup' %}">Create an account</a></p>
+      <p>Need admin access? <a href="{% url 'admin_signup' %}">Request an account</a></p>
+    </div>
+  </main>
+</div>
+</body>
+</html>
