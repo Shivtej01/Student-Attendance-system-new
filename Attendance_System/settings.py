@@ -14,12 +14,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # always win over .env values, so this file is safe to use in all environments.
 load_dotenv(BASE_DIR / '.env', override=False)
 
-SECRET_KEY = os.environ.get(
-    'SECRET_KEY',
-    'django-insecure-8+%^jq#ilmh)r=-c6b1^br5j1scqu%keo31$jv=$wrv7@+82mu'
-)
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
