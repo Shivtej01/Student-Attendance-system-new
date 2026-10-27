@@ -169,13 +169,21 @@ jobs:
           zip -r deploy.zip . \
             --exclude "*.git*" \
             --exclude ".github/*" \
-            --exclude "venv/*" ".venv/*" "env/*" "virtual/*" \
+            --exclude "venv/*" \
+            --exclude ".venv/*" \
+            --exclude "env/*" \
+            --exclude "virtual/*" \
             --exclude ".env" \
             --exclude "db.sqlite3" \
-            --exclude "media/*" "staticfiles/*" \
-            --exclude "__pycache__/*" "*.pyc" "*.pyo" \
+            --exclude "media/*" \
+            --exclude "staticfiles/*" \
+            --exclude "__pycache__/*" \
+            --exclude "*.pyc" \
+            --exclude "*.pyo" \
+            --exclude "*.zip" \
             --exclude "docs/generate_diagram.py" \
-            --exclude "docs/*.png" "docs/*.svg"
+            --exclude "docs/*.png" \
+            --exclude "docs/*.svg"
           echo "Package size: $(du -sh deploy.zip | cut -f1)"
 
       # ── 6. Ensure S3 deployment bucket exists ────────────────────────────────
